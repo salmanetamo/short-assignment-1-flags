@@ -35,14 +35,14 @@ def niger():
 
 def guinea():
     enable_fill()
-    # Vertical green rectangle
-    set_fill_color(0, 1, 0)
+    # Vertical red rectangle
+    set_fill_color(1, 0, 0)
     draw_rectangle(0, 0, window_width // 3, window_height)
     # Vertical yellow rectangle
     set_fill_color(1, 1, 0)
     draw_rectangle(window_width // 3, 0, window_width // 3, window_height)
-    # Vertical red rectangle
-    set_fill_color(1, 0, 0)
+    # Vertical green rectangle
+    set_fill_color(0, 1, 0)
     draw_rectangle(2 * window_width // 3, 0, window_width // 3, window_height)
 
 
