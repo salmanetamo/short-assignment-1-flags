@@ -1,6 +1,7 @@
 # Your name goes here
 
 from aluLib import *
+from math import sqrt, pow
 
 window_width = 1000
 window_height = 600
@@ -45,5 +46,32 @@ def guinea():
     set_fill_color(0, .58, .37)
     draw_rectangle(2 * window_width // 3, 0, window_width // 3, window_height)
 
+def morocco():
+    enable_fill()
+    disable_stroke()
+    #The red background
+    set_fill_color(.75, .15, .17)
+    draw_rectangle(0, 0, window_width, window_height)
 
-start_graphics(guinea, width=window_width, height=window_height)
+    #The green star in the center
+    disable_fill()
+    enable_stroke()
+    set_stroke_color(0, .38, .2)
+    set_stroke_width(15)
+
+    star_width = window_width/5
+    #space between the star and the left or right edge
+    side_margin = 2 * window_width/5
+    #space between the star and the top or bottom of the flag
+    vertical_margin = window_height/3
+    #height of the tip of the star
+    star_tip_height = sqrt(pow(star_width/3, 2) - pow(star_width/6, 2))
+
+    draw_polygon([[side_margin, vertical_margin + star_tip_height], \
+                  [side_margin + star_width, vertical_margin + star_tip_height], \
+                  [side_margin + star_width / 6, vertical_margin + star_width], \
+                  [side_margin + star_width / 2, vertical_margin],
+                  [side_margin + 5 / 6 * star_width, vertical_margin + star_width]])
+
+
+start_graphics(morocco, width=window_width, height=window_height)
